@@ -1,0 +1,19 @@
+{
+  "name": "bug-automation-poc",
+  "version": "1.0.0",
+  "description": "PoC: automated bug creation from API test failures (Playwright + Jira + LLM)",
+  "type": "module",
+  "scripts": {
+    "test": "playwright test",
+    "process-failures": "tsx scripts/processFailures.ts"
+  },
+  "dependencies": {
+    "@playwright/test": "^1.49.0",
+    "openai": "^4.73.0"
+  },
+  "devDependencies": {
+    "@types/node": "^22.10.0",
+    "tsx": "^4.19.2",
+    "typescript": "^5.7.0"
+  }
+}
