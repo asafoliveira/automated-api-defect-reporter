@@ -28,7 +28,7 @@ export default class FailureArtifactReporter implements Reporter {
       status: context.status,
       responseBody: context.responseBody,
       requestBody: context.requestBody,
-      errorMessage: result.error?.message ?? 'Unknown error',
+      errorMessage: result.error?.message ?? 'Erro desconhecido',
       timestamp: new Date().toISOString(),
     };
 

@@ -24,8 +24,7 @@ test('GET /posts returns 200 and list of posts', async ({ request }, testInfo) =
     responseBody: body,
     requestBody: null,
   });
-  // Intentional failure: expect 500, actual is 200
-  expect(response.status()).toBe(500);
+  expect(response.status()).toBe(500); // falha intencional: esperado 500
 });
 
 test('GET /posts/1 returns 200 and single post', async ({ request }, testInfo) => {
@@ -38,8 +37,7 @@ test('GET /posts/1 returns 200 and single post', async ({ request }, testInfo) =
     responseBody: body,
     requestBody: null,
   });
-  // Intentional failure: expect non-existent field
-  expect(body).toHaveProperty('nonExistentField', 'wrong');
+  expect(body).toHaveProperty('nonExistentField', 'wrong'); // falha intencional: campo inexistente
 });
 
 test('POST /posts creates a post', async ({ request }, testInfo) => {

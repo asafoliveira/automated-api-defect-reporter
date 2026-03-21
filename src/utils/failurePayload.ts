@@ -1,6 +1,4 @@
-/**
- * Shape of the failure artifact JSON written to artifacts/
- */
+/** Formato do JSON de falha em artifacts/ */
 export interface FailurePayload {
   endpoint: string;
   method: string;
@@ -11,9 +9,7 @@ export interface FailurePayload {
   timestamp: string;
 }
 
-/**
- * Context that tests attach via testInfo.attachments for the reporter to read.
- */
+/** Contexto anexado pelo teste para o reporter. */
 export interface FailureContext {
   endpoint: string;
   method: string;

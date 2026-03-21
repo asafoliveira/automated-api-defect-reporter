@@ -1,4 +1,4 @@
-name: API tests and bug automation
+name: Testes de API e automação de bugs
 
 on:
   push:
@@ -13,26 +13,27 @@ jobs:
       JIRA_EMAIL: ${{ secrets.JIRA_EMAIL }}
       JIRA_API_TOKEN: ${{ secrets.JIRA_API_TOKEN }}
       JIRA_BASE_URL: ${{ secrets.JIRA_BASE_URL }}
-      OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+      JIRA_PROJECT: ${{ secrets.JIRA_PROJECT }}
+      JIRA_ISSUE_TYPE: ${{ secrets.JIRA_ISSUE_TYPE }}
 
     steps:
-      - name: Checkout
+      - name: Checkout do repositório
         uses: actions/checkout@v4
 
-      - name: Setup Node.js
+      - name: Configurar Node.js
         uses: actions/setup-node@v4
         with:
           node-version: '20'
 
-      - name: Install dependencies
+      - name: Instalar dependências
         run: npm install
 
-      - name: Install Playwright
+      - name: Instalar Playwright
         run: npx playwright install
 
-      - name: Run API tests
+      - name: Executar testes de API
         run: npx playwright test
         continue-on-error: true
 
-      - name: Process failures
+      - name: Processar falhas
         run: npx tsx scripts/processFailures.ts

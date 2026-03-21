@@ -1,5 +1,5 @@
 export interface JiraSearchResult {
-  issues: Array<{ key: string }>;
+  issues?: Array<{ key?: string; id?: string } & Record<string, unknown>>;
 }
 
 export interface JiraCreateIssuePayload {
