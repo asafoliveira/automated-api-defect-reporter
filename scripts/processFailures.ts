@@ -83,7 +83,7 @@ async function main(): Promise<void> {
         issueType: JIRA_ISSUE_TYPE,
         summary: bugContent.summary,
         description,
-        labels: [fp],
+        labels: [fp, 'api_bug_automain'],
       });
 
       const attachmentPayload = { requestBody: data.requestBody, responseBody: data.responseBody };

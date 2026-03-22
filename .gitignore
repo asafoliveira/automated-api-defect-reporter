@@ -3,3 +3,4 @@ dist/
 .env
 artifacts/*.json
 !artifacts/.gitkeep
+test-results/
